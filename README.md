@@ -6,3 +6,7 @@ Some-awe-some pieces of javascript code that I have made with the sole purpose o
 ### 1. Basic Calculator
 
 A cool calculator made using pure Javascript, HTML and CSS.
+
+### 2. Paint
+
+A fun painting tool made with the HTML5 canvas element.
