@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Todo List</title>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+		<script src="jquery-3.2.1.min.js"></script>
+	</head>
+
+	<body>
+		<div id="container">
+			<h1>MEMO</h1>
+			<input type="text" placeholder="Enter new ...">
+			<ul>
+				<li><span><i class="delete"> Delete </i></span> To add a new item in the list type in the above box</li>
+				<li><span><i class="delete"> Delete </i></span> To delete an item hover over it and click on "Delete"</li>
+				<li><span><i class="delete"> Delete </i></span> AAAAAAAAAAAAAAAA </li>
+			</ul>
+		</div>
+		<script>
+
+			$("ul").on("click", "span", function(event) {
+				$(this).parent().fadeOut(300, function() {
+					$(this).remove();
+				});
+				event.stopPropagation();
+			});
+
+			$("input[type = 'text']").keypress(function(event) {
+				if(event.which === 13) { //"Enter" key
+					var text = $(this).val();
+					$(this).val("");
+					$("ul").append("<li><span><i class='delete'> Delete </i></span> " + text + "</li>");
+				}
+			});
+		</script>
+	</body>
+
+</html>
