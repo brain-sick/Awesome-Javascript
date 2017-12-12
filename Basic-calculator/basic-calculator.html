@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<head>
+	<title>Basic Calculator</title>
+	<style>
+		.box {
+	    background-color:#eaeaea;
+	    height:365px;
+	    width:330px;
+	    border-radius:10px;
+	    position:relative;
+	    margin: auto;
+	    border-bottom: #adadad 2px solid; 
+		}
+		.display {
+	    background-color:#222;
+	    width:300px;
+	    position:relative;
+	    left:12px;
+	    top:20px;
+	    height:45px;
+		}
+		.display input {
+			position:relative;
+	    left:2px;
+	    top:2px;
+	    height:38px;
+	    color:black;
+	    background-color:#e5dada;
+	    font-size:21px;
+	    text-align:right;
+		}
+		.keys {
+		  position:relative;
+		  top:20px;
+		  font-weight: bold;
+		  font-family: monospace;
+		  font-size: 1.2em;
+		}
+		.button {
+	    width:60px;
+	    height:42px;
+	    border:none;
+	    border-radius:5px;
+	    margin-left:12px;
+	    cursor:pointer;
+		}
+		.button.grey {
+	    background-color:#dddddd;
+	    border-bottom: #bcbcbc 3px solid; 
+		}
+		.button.normal {
+	    background-color:#96bfff;
+	    border-bottom: #adadad 3px solid; 
+		}
+		.button.equals {
+	    width: 142px;
+	    color: white;
+	    background-color:#4c5f7c;
+	    border-bottom: grey 2px solid; 
+		}
+		.grey:active {
+		  border-top:#adadad 2px solid;
+		  border-bottom:2px #dddddd solid;
+		}
+		.normal:active {
+			border-top:#adadad 3px solid;
+		}
+		.equals:active {
+	    border-top:grey 2px solid;
+	    border-bottom:FF9933 2px solid;
+		}
+		p {
+		  line-height:10px;
+		}
+	</style>
+
+	<script>
+		function c(val) {
+		    document.getElementById("d").value=val;
+		}
+		function math(val) {
+		    document.getElementById("d").value+=val;
+		}
+		function equals() { 
+		    try { 
+		      c(eval(document.getElementById("d").value)) 
+		    } 
+		    catch(e) {
+		      c('Error') 
+		    } 
+		}
+	</script>
+
+</head>
+
+<body>
+	<div class="box">
+    <div class="display"><input type="text" readonly size="24.5" id="d"></div>
+    	<div class="keys">
+        <p>
+	        <input type="button" class="button grey" value="C" onclick='c("")'>
+	        <input type="button" class="button grey" value="(" onclick='math("(")'>
+	        <input type="button" class="button grey" value=")" onclick='math(")")'>
+	        <input type="button" class="button grey" value="/" onclick='math("/")'>
+        </p>
+        <p>
+	        <input type="button" class="button normal" value="7" onclick='math("7")'>
+	        <input type="button" class="button normal" value="8" onclick='math("8")'>
+	        <input type="button" class="button normal" value="9" onclick='math("9")'>
+	        <input type="button" class="button grey" value="*" onclick='math("*")'>
+        </p>
+        <p>
+	        <input type="button" class="button normal" value="4" onclick='math("4")'>
+	        <input type="button" class="button normal" value="5" onclick='math("5")'>
+	        <input type="button" class="button normal" value="6" onclick='math("6")'>
+	        <input type="button" class="button grey" value="-" onclick='math("-")'>
+        </p>
+        <p>
+	        <input type="button" class="button normal" value="1" onclick='math("1")'>
+	        <input type="button" class="button normal" value="2" onclick='math("2")'>
+	        <input type="button" class="button normal" value="3" onclick='math("3")'>
+	        <input type="button" class="button grey" value="+" onclick='math("+")'>
+        </p>
+        <p>
+	        <input type="button" class="button normal" value="0" onclick='math("0")'>
+	        <input type="button" class="button normal" value="." onclick='math(".")'>
+	        <input type="button" class="button equals" value="=" onclick='equals()'>
+        </p>
+    	</div>
+    </div>
+	</div>
+
+</body>
+</html>
